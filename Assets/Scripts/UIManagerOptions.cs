@@ -23,7 +23,7 @@ public class UIManagerOptions : MonoBehaviour
     {
         if (sharedInstance == null)
         {
-            sharedInstance = this;
+            sharedInstance = UIManagerMainMenu.sharedInstance;
         }
         else
         {

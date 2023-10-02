@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
         ChangeMovementLimits(-defaultLimit, defaultLimit, defaultLimit, -defaultLimit);
     }
 
-    private void update()
+    private void Update()
     {
         Movement();
         KeepBetweenLimits();
@@ -46,12 +46,12 @@ public class PlayerController : MonoBehaviour
     private void Movement()
     {
         horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
         
         // Rotamos con el eje horizontal
-        transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime * verticalInput);
+        transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime * horizontalInput);
         // Movemos con el eje vertical
-        Translate(Vector3.forward * movementSpeed * Time.deltaTime * verticalInput);
+        transform.Translate(Vector3.forward * movementSpeed * Time.deltaTime * verticalInput);
     }
 
     public void ChangeMovementLimits(float left, float right, float forward, float back)

@@ -25,7 +25,7 @@ public class UIManagerMainMenu : MonoBehaviour
     private void Start()
     {
         // Nos aseguramos de que al empezar el panel de instrucciones está oculto
-        ShowInstructionsPanel();
+        HideInstructionsPanel();
     }
 
     public void ShowInstructionsPanel()
